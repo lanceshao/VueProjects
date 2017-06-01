@@ -13,12 +13,12 @@
         {{ title }}
       </header>
       <div class="inputControl">
-        <input id="itemForm" v-on:keypress.enter="addItem" placeholder="Enter Plan">
+        <input type="text" v-model='newItem' v-on:keyup.enter="addItem" placeholder="Enter Plan...">
         <button v-on:click="addItem">Add Plan</button>
       </div>
       <ul>
-        <li v-for="(item,index) in items">                    
-          <button v-on:click="deleteItem">X</button>
+        <li v-for="(item,index) in items">
+          <button v-on:click="deleteItem(index)">X</button>
           {{ item.text }}
         </li>
       </ul>

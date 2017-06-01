@@ -1,23 +1,28 @@
 var card = new Vue({
   el: '#card',
+
   data: {
     title: 'Daily Plan',
+
+    newItem: '',
+
     items: [
 
     ]
   },
   methods: {
-    addItem: function(){
-      var input = document.getElementById("itemForm");
+    addItem(){
 
-      if(input.value !== '') {
-        this.items.push({
-          text: input.value
-        })
-        input.value = '';
+      const newEntry = {
+        text: this.newItem,
+      }
+
+      if(this.newItem.length) {
+        this.items.push(newEntry)
+        this.newItem = ''
       }
     },
-    deleteItem: function(index){
+    deleteItem(index){
       this.items.splice(index,1)
     }
   }
