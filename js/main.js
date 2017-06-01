@@ -3,7 +3,7 @@ var card = new Vue({
   data: {
     title: 'Daily Plan',
     items: [
-      
+
     ]
   },
   methods: {
